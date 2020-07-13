@@ -1,0 +1,8 @@
+<h2>Event Wall</h2>
+
+<% @events.each do |e| %>
+<b><%= e.title %></b><br><br>
+Date: <%= e.date %><br>
+Description: <%= e.description %><br>
+<hr><br>
+<% end %>
