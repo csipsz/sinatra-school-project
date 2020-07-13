@@ -1,0 +1,10 @@
+<h2>My Events</h2>
+
+<% @events.each do |e| %>
+<% if e.user == current_user %>
+<b><%= e.title %></b><br><br>
+Date: <%= e.date %><br>
+Description: <%= e.description %><br>
+<hr><br>
+<% end %>
+<% end %>

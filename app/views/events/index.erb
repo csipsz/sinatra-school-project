@@ -1,4 +1,9 @@
+<h1>Now you are logged in as <%=current_user.username%></h1>
+<a href="/logout">Log out</a></h2>
+
 <h2>Event Wall</h2>
+<a href="/upcoming">Your upcoming events</a><br>
+<a href="/events/new">Create a new event</a><br>
 
 <% @events.each do |e| %>
 <b><%= e.title %></b><br><br>
@@ -6,3 +11,4 @@ Date: <%= e.date %><br>
 Description: <%= e.description %><br>
 <hr><br>
 <% end %>
+

@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
 
         if @user && @user.authenticate(params[:user][:password])
             session[:user_id] = @user.id
-            erb :'sessions/success'
+            redirect to  '/events'
         else 
             redirect to '/error'
         end 
