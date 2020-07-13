@@ -19,22 +19,33 @@ class EventController < ApplicationController
 
     post '/events' do 
         @event = Event.create(params[:event])
-        @event.user = current_user
+        current_user.events << @event
         redirect to "/events/#{@event.id}"
-
     end 
 
     get '/events/:id' do 
-        "Show page "
+        find_event
+        if @event 
+            erb :'events/show'
+        else 
+            redirect '/events'
+        end 
     end 
 
     get '/events/:id/edit' do 
+        @event = find_event
+        erb :'events/edit'
     end 
 
-    patch '/events/id' do 
+    patch '/events/:id' do 
+        find_event
+        @event.update(params[:event])
+        redirect "/events/#{@event.id}"
     end 
 
-    delete 'event/:id' do 
+    delete '/event/:id' do 
+        find_event.destroy
+        redirect to '/events'
     end 
 
     private 

@@ -1,0 +1,13 @@
+<h2>Edit event</h2> 
+
+
+<br>
+<form action="/events/<%= @event.id %>" method="POST">
+<input id="hidden" type="hidden" name="_method" value="patch">
+
+Title: <input type="text" name=event[title] value="<%= @event.title %>"><br>
+Date: <input type="text" name=event[date] value="<%= @event.date %>" ><br>
+Description of the event: <input type="text" name=event[description] value="<%= @event.description %>" ><br>
+
+<input type="submit" value="Update this Event">
+</form>
