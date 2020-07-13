@@ -1,0 +1,17 @@
+Mentions for <%= @user.username %><br>
+
+<% mentions = @events.select do |event| %>
+<% if event.title.include?(@user.username) || event.description.include?(@user.username)  %>
+<hr>
+Event: <%= event.title %><br>
+Date: <%= event.date %><br>
+Description: <%= event.description %><br>
+Mentioned by: <b><%= event.user.username %></b>
+<hr>
+<% end %>
+<% end %>
+
+<% if mentions.empty? %>
+<p>Currently there are no mentions</p>
+<% end %>
+

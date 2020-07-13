@@ -15,6 +15,13 @@
   </head>
   <body>
     <div class="wrapper">
+    <% if logged_in? %>
+    <p>
+    <a href='/events'>HOME</a>
+    <a href="/users">USERS</a>
+    <a href="/logout">LOG OUT</a>
+    </p>
+    <% end %>
 
         <%= yield %>
 
