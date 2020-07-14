@@ -1,7 +1,4 @@
-require 'pry'
-
 class EventsController < ApplicationController 
-    use Rack::Flash
 
     get '/events' do 
         redirect_root
@@ -11,7 +8,7 @@ class EventsController < ApplicationController
 
     get '/upcoming' do 
         redirect_root
-        @events = Event.all
+        @events = Event.all.sort_by &:date
         erb :'events/upcoming'
     end 
 

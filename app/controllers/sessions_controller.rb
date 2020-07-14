@@ -1,4 +1,3 @@
-require 'pry'
 class SessionsController < ApplicationController
     use Rack::Flash
 
@@ -9,7 +8,6 @@ class SessionsController < ApplicationController
     post '/signup' do 
         @user = User.new(username: params[:user][:username], password: params[:user][:password])
         if @user.save
-            #erb :'sessions/login'
             session[:user_id] = @user.id
             redirect to  '/events'
         else 
@@ -20,10 +18,6 @@ class SessionsController < ApplicationController
 
     get '/login' do 
         erb :'sessions/login'
-    end 
-
-    get '/error' do 
-        erb :'sessions/error'
     end 
 
     post '/login' do 

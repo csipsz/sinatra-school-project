@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
     get '/users' do
         redirect_root 
-        @users = User.all
+        @users = User.all.sort_by &:username
         erb :'users/index'
     end 
 
@@ -12,11 +12,11 @@ class UsersController < ApplicationController
         redirect_root
         @events = Event.all
         @user = User.find_by_id(params[:id])
-        erb :'/users/mentions'
+        erb :'/users/show'
     end 
 
-    get '/user/delete' do
-        erb :'/users/del'
+    get '/user/edit' do
+        erb :'/users/edit'
     end 
 
     delete '/user/:id' do 
