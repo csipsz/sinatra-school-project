@@ -3,7 +3,7 @@ require 'pry'
 class EventController < ApplicationController 
 
     get '/events' do 
-        @events = Event.all
+        @events = Event.all.sort_by &:date
         erb :'events/index'
     end 
 

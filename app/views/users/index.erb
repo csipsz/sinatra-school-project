@@ -1,6 +1,6 @@
 <h2><a href="/users/<%=current_user.id%>">Your mentions</a></h2>
-<% @users.each do |u| %>
-<% if u.id != current_user.id %>
-<b><a href="/users/<%=u.id%>"><%= u.username %></a></b><br><br>
+<% @users.each do |user| %>
+<% if user.id != current_user.id %>
+<b><a href="/users/<%=user.id%>"><%= user.username %></a></b><br><br>
 <% end %>
 <% end %>
