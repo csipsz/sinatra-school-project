@@ -3,8 +3,12 @@ require 'pry'
 class EventController < ApplicationController 
 
     get '/events' do 
+        if logged_in?
         @events = Event.all.sort_by &:date
         erb :'events/index'
+        else 
+            redirect to '/login'
+        end 
     end 
 
     get '/upcoming' do 
@@ -13,8 +17,11 @@ class EventController < ApplicationController
     end 
 
     get '/events/new' do 
-
-        erb :'events/new'
+        if logged_in?
+            erb :'events/new'
+        else 
+            redirect to '/'
+        end 
     end 
 
     post '/events' do 
