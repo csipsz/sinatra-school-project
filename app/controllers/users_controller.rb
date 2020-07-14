@@ -1,4 +1,5 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
+    use Rack::Flash
 
     get '/users' do
         redirect_root 

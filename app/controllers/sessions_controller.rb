@@ -1,5 +1,7 @@
 require 'pry'
 class SessionsController < ApplicationController
+    use Rack::Flash
+
     get '/signup' do 
         erb :'sessions/signup'
     end 
@@ -11,7 +13,8 @@ class SessionsController < ApplicationController
             session[:user_id] = @user.id
             redirect to  '/events'
         else 
-            erb :'sessions/error' 
+            flash.now[:error] = @user.errors.full_messages
+            erb :'sessions/signup' 
         end 
     end 
 
@@ -30,7 +33,8 @@ class SessionsController < ApplicationController
             session[:user_id] = @user.id
             redirect to  '/events'
         else 
-            redirect to '/error'
+            flash.now[:error] = ["Invalid username or password"]
+            erb :'sessions/login'
         end 
     end 
 

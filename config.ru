@@ -8,6 +8,6 @@ use Rack::MethodOverride
 
 
 use SessionsController
-use EventController
-use UserController
+use EventsController
+use UsersController
 run ApplicationController

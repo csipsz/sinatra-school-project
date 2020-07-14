@@ -1,6 +1,7 @@
 require 'pry'
 
-class EventController < ApplicationController 
+class EventsController < ApplicationController 
+    use Rack::Flash
 
     get '/events' do 
         redirect_root
