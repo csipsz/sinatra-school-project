@@ -17,11 +17,11 @@ Create a new event
 <% @events.each do |e| %>
 <div class="col l4 z-depth-2">
 <b><%= e.title.upcase %></b><br><br>
-Date: <%= e.date %><br>
-Description: <%= e.description %><br><br>
+<b>Date:</b> <%= e.date %><br>
+<p class="truncate"><b>Description:</b><br><%= e.description %><p><br>
 <a class="btn-small pink waves-effect waves-light" href="/events/<%=e.id%>">View</a>
 <a class="btn-small pink waves-effect waves-light" href="/events/<%=e.id%>/edit">Edit</a><br>
-<br><br>
+<br>
 </div>
 <% end %>
 </div>
