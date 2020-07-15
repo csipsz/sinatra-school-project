@@ -1,12 +1,15 @@
 <div style="padding: 25px">
-<h4><b>EVENT DETAILS</b></h4> 
-<b><%= @event.title.upcase %></b><br><br>
-<b>DATE:</b> <%= @event.date %><br>
-<b>DESCRIPTION:</b> <%= @event.description %><br>
-<br>
-<form action="/event/<%= @event.id %>" method="POST">
-<input id="hidden" type="hidden" name="_method" value="delete">
-<input class="btn-small pink waves-effect waves-light" type="submit" value="Delete this Event">
-</form>
+
+    <h4><b>EVENT DETAILS</b></h4> 
+    
+    <b><%= @event.title.upcase %></b><br><br>
+    <b>DATE:</b> <%= @event.date %><br>
+    <b>DESCRIPTION:</b> <%= @event.description %><br>
+    <br>
+
+    <form action="/event/<%= @event.id %>" method="POST">
+        <input id="hidden" type="hidden" name="_method" value="delete">
+        <input class="btn-small pink waves-effect waves-light" type="submit" value="Delete this Event">
+    </form>
 </div>
 

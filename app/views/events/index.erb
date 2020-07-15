@@ -1,5 +1,5 @@
 <div>
-<h2 class="center-align pink-text">YOU ARE LOGGED IN AS <%=current_user.username.upcase%></h2>
+    <h2 class="center-align pink-text">YOU ARE LOGGED IN AS <%=current_user.username.upcase%></h2>
 </div>
 
 <h3>EVENT WALL</h3>
@@ -14,14 +14,14 @@ Create a new event
 <br>
 
 <div class="row">
-<% @events.each do |e| %>
-<div class="col l4 z-depth-2">
-<b><%= e.title.upcase %></b><br><br>
-<b>Date:</b> <%= e.date %><br>
-<p class="truncate"><b>Description:</b><br><%= e.description %><p><br>
-<a class="btn-small pink waves-effect waves-light" href="/events/<%=e.id%>">View</a>
-<a class="btn-small pink waves-effect waves-light" href="/events/<%=e.id%>/edit">Edit</a><br>
-<br>
-</div>
-<% end %>
+    <% @events.each do |e| %>
+        <div class="col l4 z-depth-2">
+            <b><%= e.title.upcase %></b><br><br>
+            <b>Date:</b> <%= e.date %><br>
+            <p class="truncate"><b>Description:</b><br><%= e.description %><p><br>
+            <a class="btn-small pink waves-effect waves-light" href="/events/<%=e.id%>">View</a>
+            <a class="btn-small pink waves-effect waves-light" href="/events/<%=e.id%>/edit">Edit</a><br>
+            <br>
+        </div>
+    <% end %>
 </div>
