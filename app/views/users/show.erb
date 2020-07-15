@@ -1,17 +1,20 @@
-Mentions for <%= @user.username %><br>
+<div style="padding: 25px;">
+<b><p class="center-align">MENTIONS FOR <%= @user.username.upcase %><p></b>
 
 <% mentions = @events.select do |event| %>
 <% if event.title.include?(@user.username) || event.description.include?(@user.username)  %>
 <hr>
-Event: <%= event.title %><br>
-Date: <%= event.date %><br>
-Description: <%= event.description %><br>
-Mentioned by: <b><%= event.user.username %></b>
+<b>
+EVENT: <%= event.title %><br>
+DATE: <%= event.date %><br>
+DESCRIPTION: <%= event.description %><br>
+<p class="pink-text ">Mentioned by: <%= event.user.username %></b></p>
 <hr>
 <% end %>
 <% end %>
 
 <% if mentions.empty? %>
-<p>Currently there are no mentions</p>
+<p><b>CURRENTLY THERE ARE NO MENTIONS</b></p>
 <% end %>
+</div>
 

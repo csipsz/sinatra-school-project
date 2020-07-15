@@ -2,13 +2,13 @@ class EventsController < ApplicationController
 
     get '/events' do 
         redirect_root
-        @events = Event.all.sort_by &:date
+        sorted_events
         erb :'events/index'
     end 
 
     get '/upcoming' do 
         redirect_root
-        @events = Event.all.sort_by &:date
+        sorted_events
         erb :'events/upcoming'
     end 
 
@@ -38,11 +38,12 @@ class EventsController < ApplicationController
 
     get '/events/:id/edit' do 
         redirect_root
+        sorted_events
         @event = current_event
         if @event.user == current_user
             erb :'events/edit'
         else 
-            erb :'events/error'
+            erb :'events/index'
         end 
     end 
 
@@ -53,11 +54,12 @@ class EventsController < ApplicationController
     end 
 
     delete '/event/:id' do 
+        sorted_events
         if current_event.user == current_user
             current_event.destroy
             redirect to '/events'
         else 
-            erb :'events/error'
+            erb :'events/index'
         end 
     end 
 
@@ -66,4 +68,7 @@ class EventsController < ApplicationController
             @event = Event.find_by_id(params[:id])
         end 
 
+        def sorted_events 
+            @events = Event.all.sort_by &:date
+        end 
 end 

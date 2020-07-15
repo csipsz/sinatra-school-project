@@ -1,13 +1,13 @@
-<h1>MENTIONS</h1>
-<h3><a href="/users/<%=current_user.id%>"><%=current_user.username%> </a></h3>
-
+<div style="padding: 25px;">
+<h4 class="center-align">MENTIONS</h4>
+<h3><a class="btn pink waves-effect waves-light" href="/users/<%=current_user.id%>">FOR YOU, <%=current_user.username.upcase%> </a></h3>
+<p><b>AND THE OTHERS:</b></p>
 
 <% @users.each do |user| %>
 <% if user.id != current_user.id %>
-<b><a href="/users/<%=user.id%>"><%= user.username %></a></b><br><br>
+<b><a class="pink-text" href="/users/<%=user.id%>"><%= user.username.upcase %></a></b><br><br>
 <% end %>
 <% end %>
-
-
 <hr>
-<a href="/user/edit">Delete your account</a>
+<a class="btn grey darken-3 waves-effect waves-light" href="/user/edit">DELETE YOUR ACCOUNT</a>
+</div>
