@@ -1,7 +1,7 @@
-<h4 style="padding: 25px;"> ARE YOU SURE YOU WANT TO DELETE YOUR ACCOUNT?</h4>
+<h4 style="padding: 25px;" class="center-align"> ARE YOU SURE YOU WANT TO DELETE YOUR ACCOUNT?</h4>
 
-<div style="padding: 300px; padding-top: 50px">
-    <div style="padding: 70px;" class="grey">
+<div style="padding: 400px; padding-top: 50px">
+    <div style="padding: 80px;" class="grey">
         <form action="/user/<%= current_user.id %>" method="POST">
         <input id="hidden" type="hidden" name="_method" value="delete">
         <input class="btn pink waves-effect waves-light" type="submit" value="Delete My account">
