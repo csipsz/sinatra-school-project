@@ -1,10 +1,12 @@
-<h2>My Events</h2>
+<h2 class="center-align">MY EVENTS</h2>
 
 <% @events.each do |e| %>
 <% if e.user == current_user %>
+<div style="padding: 30px">
 <b><%= e.title %></b><br><br>
 Date: <%= e.date %><br>
 Description: <%= e.description %><br>
 <hr><br>
+</div>
 <% end %>
 <% end %>

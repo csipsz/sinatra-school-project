@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
 
-    <title>SinatraSchoolProject</title>
+    <title>MyPlacesToGo</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--Import Google Icon Font-->
@@ -18,8 +18,10 @@
 
   </head>
   <body class="grey darken-3">
-    
-    <nav class="pink lighten-1" >
+
+    <div class="container indigo lighten-5">
+
+    <nav class="pink lighten-1">
     <% if logged_in? %>
     <ul class="right" >
     <li><a href='/events'>HOME</a></li>
@@ -29,12 +31,10 @@
     <% end %>
     </nav>
 
-    <div class="container indigo lighten-5">
-
     <% if flash[:error] %> 
       <% flash[:error].each do |e| %>
         <div>
-        <%= e %> 
+        <b><%= e.upcase %></b> 
         </div> 
       <% end %>
     <% end %>
@@ -45,7 +45,7 @@
       <footer class="branding">
       <div class="container">
       <h4 class="deep-orange-text darken-4">About me</h4>
-      <p class="deep-orange-text darken-4">Kant believed that reason is also the source of morality, and that aesthetics arise from a faculty of disinterested judgment. Kant's views continue to have a major influence on contemporary philosophy, especially the fields of epistemology, ethics, political theory, and post-modern aesthetics.[29] He attempted to explain the relationship between reason and human experience and to move beyond the failures of traditional philosophy and metaphysics.</p>
+      <p class="deep-orange-text darken-4">Kant believed that reason is also the source of morality, and that aesthetics arise from a faculty of disinterested judgment. Kant's views continue to have a major influence on contemporary philosophy, especially the fields of epistemology, ethics, political theory, and post-modern aesthetics. He attempted to explain the relationship between reason and human experience and to move beyond the failures of traditional philosophy and metaphysics.</p>
         <div class="row">
         <small>&copy; 2020 <strong>SinatraSchoolProject</strong></small>
       </div>
