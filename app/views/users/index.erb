@@ -1,9 +1,13 @@
-<h2><a href="/users/<%=current_user.id%>">Mentions for you, <%=current_user.username%> </a></h2>
+<h1>MENTIONS</h1>
+<h3><a href="/users/<%=current_user.id%>"><%=current_user.username%> </a></h3>
+
+
 <% @users.each do |user| %>
 <% if user.id != current_user.id %>
 <b><a href="/users/<%=user.id%>"><%= user.username %></a></b><br><br>
 <% end %>
 <% end %>
+
 
 <hr>
 <a href="/user/edit">Delete your account</a>
