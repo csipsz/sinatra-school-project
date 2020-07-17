@@ -12,4 +12,4 @@ https://github.com/csipsz/sinatra-school-project
 License
 
 
-The gem is available as open source under the terms of the MIT License.
+The gem is available as open source under the terms of the <a href="https://opensource.org/licenses/MIT">MIT License</a>.
